@@ -18,3 +18,8 @@ def get_movie(id:int): #
         if item['id'] == id:
             return item
     return []
+
+@app.get('/movies/{id}', tags=['Movies']) #app get consultar por id
+def get_movies_by_category(category:str, year:int): #definiendo una funcion de la ruta
+   # return category
+    return [item for item in movies_list if item['category'] == category and item['year'] == year]
